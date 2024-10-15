@@ -34,7 +34,8 @@ jobs:
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
     - name: Test with pytest
       run: |
-        pytest test_add_to_cart.py test_form_cart.py --alluredir=allure-results
+            pytest tests/pages --alluredir=allure-results
+            pytest tests/tests --alluredir=allure-results
     - name: List allure-results
       run: ls -al allure-results  # Проверка содержимого папки
     - name: Load test report history
